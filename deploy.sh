@@ -4,13 +4,17 @@ set -o pipefail
 
 usage() {
 	cat >&2 <<-'EOF'
-	Usage:
+	error: one or more AWS credentials missing
 	EOF
 	exit 1
 }
 
-#[ "$AWS_S3_BUCKET" ] || usage
-#[ "$AWS_ACCESS_KEY" ] || usage
-#[ "$AWS_SECRET_KEY" ] || usage
+hugo
 
-#s3cmd sync --delete-removed -P . s3://$AWS_S3_BUCKET/
+[ "$AWS_S3_BUCKET" ] || usage
+[ "$AWS_ACCESS_KEY" ] || usage
+[ "$AWS_SECRET_KEY" ] || usage
+
+cd public
+
+s3cmd sync --delete-removed -P . s3://$AWS_S3_BUCKET/

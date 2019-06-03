@@ -1,0 +1,4 @@
+baseURL = "https://blog.bwasd.io"
+languageCode = "en-us"
+title = "Barry Wasdell"
+canonifyURLs = true

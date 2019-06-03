@@ -36,7 +36,7 @@ purge-cache:
 		-e AWS_ACCESS_KEY \
 		-e AWS_SECRET_KEY \
 		-e AWS_CF_DISTRIBUTION_ID \
-		-e AWS_S3_BUCKET=blog.bwasd.io.com \
+		-e AWS_S3_BUCKET=blog.bwasd.io \
 		$(REGISTRY)/cf-reset-cache
 
 .PHONY: clean
