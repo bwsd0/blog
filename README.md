@@ -1,13 +1,6 @@
 # blog
 
-**Build**
-
+**Deploy**
 ```bash
 make
-```
-
-**Deploy**
-
-```bash
-make release
 ```
