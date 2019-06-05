@@ -1,5 +1,6 @@
-#nav, a {
+#nav a {
     color: rgba(0,0,0,.54);
+    margin-right: 14px;
 }
 
 #nav {
@@ -9,19 +10,23 @@
 
 #nav, ul {
     display: table;
+    list-style:none;
 }
 
 .nav li {
     display: table-cell;
 }
 
-ul,nav {
-    list-style:none;
-}
-
 a {
     text-decoration: none;
-    color: #1a73e8;
+}
+
+a:visited {
+    color: #212121;
+}
+
+a:link {
+    text-decoration: underline;
 }
 
 h1,h2,h3,h4,h5 {
@@ -29,9 +34,15 @@ h1,h2,h3,h4,h5 {
 }
 
 body, html {
-    font: 400 16px/24px Roboto,sans-serif;
+    font-family: 'Minion Pro';
+    font-size: 100%;
     color: #212121;
 }
+
+body {
+    line-height: 1.6em;
+}
+
 
 #content {
     position: relative;

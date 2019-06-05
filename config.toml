@@ -6,6 +6,9 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [menu]
     [[menu.nav]]
+        name = "Home"
+        url = "/"
+    [[menu.nav]]
         name = "Github"
         url = "https://github.com/bwasd"
     [[menu.nav]]
