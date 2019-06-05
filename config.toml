@@ -3,3 +3,14 @@ languageCode = "en-us"
 title = "Barry Wasdell"
 canonifyURLs = true
 disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[menu]
+    [[menu.nav]]
+        name = "Github"
+        url = "https://github.com/bwasd"
+    [[menu.nav]]
+        name = "RSS"
+        url = "/index.xml"
+    [[menu.nav]]
+        name = "About"
+        url = "/about"
