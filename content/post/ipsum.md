@@ -1,7 +1,6 @@
 ---
 title: "Ipsum"
 date: 2019-06-05T07:38:59+02:00
-draft: true
 ---
 
 
