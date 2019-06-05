@@ -1,5 +1,5 @@
-baseURL = "https://blog.bwasd.io"
+baseURL = "http://blog.bwasd.io"
 languageCode = "en-us"
 title = "Barry Wasdell"
 canonifyURLs = true
-disableKinds = ["taxononmy", "taxonomyTerm"]
+disableKinds = ["taxonomy", "taxonomyTerm"]

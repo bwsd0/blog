@@ -1,0 +1,16 @@
+<header>
+    <nav>
+        <ul>
+            <li><a href="http://blog.bwasd.io">{{ .Site.Title }}</a></li>
+        </ul>
+        <ul>
+            {{ with .OutputFormats.Get "RSS" }}
+            <li>
+                <a href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}"/>RSS</a>
+            </li>
+            {{ end }}
+
+            <li><a href="https://github.com/bwasd" target="_blank">GH</a></li>
+        </ul>
+    </nav>
+</header>
