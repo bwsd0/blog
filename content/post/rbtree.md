@@ -1,6 +1,7 @@
 ---
 title: "Kernel rbtree"
 date: 2019-06-05T16:36:07+02:00
+summary: Some notes on Linux's rbtree implementation.
 ---
 
 To use kernel rbtrees, insert and search cores must be implemented by the

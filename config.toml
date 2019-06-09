@@ -6,14 +6,18 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [menu]
     [[menu.nav]]
-        name = "Home"
+        name = "blog.bwasd.io"
         url = "/"
+        weight = -100
     [[menu.nav]]
         name = "Github"
+        weight = -80
         url = "https://github.com/bwasd"
     [[menu.nav]]
-        name = "RSS"
+        name = "Feed"
+        weight = -70
         url = "/index.xml"
     [[menu.nav]]
         name = "About"
+        weight = -90
         url = "/about"

@@ -17,24 +17,29 @@
     display: table-cell;
 }
 
-a {
-    text-decoration: none;
+.title {
+    font-size: 200%;
+    text-align: center;
 }
 
-a:visited {
-    color: #212121;
-}
-
-a:link {
+p a {
+    color: #375EAB;
     text-decoration: underline;
 }
 
-h1,h2,h3,h4,h5 {
+p a:visited {
+    color: #375EAB;
+    text-decoration: underline;
+}
+
+h1,h2,h3,h4 a, a:visited {
+    text-decoration: none;
     color: #212121;
+    margin-bottom: 10px;
 }
 
 body, html {
-    font-family: 'Minion Pro';
+    font-family: 'Open Sans', sans-serif;
     font-size: 100%;
     color: #212121;
 }
@@ -43,6 +48,11 @@ body {
     line-height: 1.6em;
 }
 
+footer {
+    color: #666;
+    font-size: 0.875rem;
+    margin-top: 20px;
+}
 
 #content {
     position: relative;
@@ -53,5 +63,5 @@ body {
 
 .time {
     color: #757575;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
