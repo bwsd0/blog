@@ -22,13 +22,8 @@
     text-align: center;
 }
 
-p a {
-    color: #375EAB;
-    text-decoration: underline;
-}
-
-p a:visited {
-    color: #375EAB;
+a, a:visited {
+    color: #1F3C93;
     text-decoration: underline;
 }
 
