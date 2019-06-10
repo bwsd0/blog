@@ -11,6 +11,11 @@ usage() {
 
 hugo
 
+if [ ! -d public ]; then
+	echo "error: public directory missing"
+	exit 1
+fi
+
 [ "$AWS_S3_BUCKET" ] || usage
 [ "$AWS_ACCESS_KEY" ] || usage
 [ "$AWS_SECRET_KEY" ] || usage
