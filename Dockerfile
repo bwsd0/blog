@@ -1,5 +1,5 @@
 FROM alpine
-MAINTAINER Barry Wasdell <barrywasdell@gmail.com>
+LABEL maintainer "Barry Wasdell <barrywasdell@gmail.com>"
 
 RUN apk add --no-cache \
     ca-certificates \
