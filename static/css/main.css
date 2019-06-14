@@ -1,3 +1,10 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+    color: #212121;
+    line-height: 1.6em;
+}
+
 #nav a {
     color: rgba(0,0,0,.54);
     margin-right: 14px;
@@ -22,31 +29,28 @@
     text-align: center;
 }
 
+.toc-title a:visited, a {
+    color: #1166BB;
+}
+
 a, a:visited {
-    color: #1F3C93;
+    color: #1166BB;
     text-decoration: underline;
 }
 
-h1,h2,h3,h4 a, a:visited {
-    text-decoration: none;
-    color: #212121;
+a:visited {
+    color: #1F3C93;
+}
+
+h1,h2,h3,h4 {
     margin-bottom: 10px;
-}
-
-body, html {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 100%;
-    color: #212121;
-}
-
-body {
-    line-height: 1.6em;
 }
 
 footer {
     color: #666;
     font-size: 0.875rem;
     margin-top: 20px;
+    text-align: center;
 }
 
 #content {
