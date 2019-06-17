@@ -30,16 +30,12 @@ body {
 }
 
 .toc-title a:visited, a {
-    color: #1166BB;
+    color: #212121;
 }
 
 a, a:visited {
     color: #1166BB;
     text-decoration: underline;
-}
-
-a:visited {
-    color: #1F3C93;
 }
 
 h1,h2,h3,h4 {
