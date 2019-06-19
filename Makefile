@@ -14,11 +14,11 @@ DOCKER_IMAGE := $(REGISTRY)/blog
 PORT := 1313
 
 .PHONY: build
-build:
+build: ## Build Docker image from Dockerfile
 	docker build --rm --force-rm -t $(DOCKER_IMAGE) .
 
 .PHONY: deploy
-deploy: build
+deploy: build ## Upload content to S3
 	@docker run --rm -it \
 		-e AWS_S3_BUCKET \
 		-e AWS_ACCESS_KEY \
@@ -26,14 +26,14 @@ deploy: build
 		$(DOCKER_IMAGE)
 
 .PHONY: run
-run: clean build
+run: clean build ## Build
 	@docker run -d -v $(CURDIR):/usr/src/blog \
 		-p $(PORT):$(PORT) \
 		--name blog \
 		$(DOCKER_IMAGE) hugo server --port=$(PORT) --bind=0.0.0.0
 
 .PHONY: purge-cache
-purge-cache:
+purge-cache: ## Invalidate CF CDN cache
 	@docker run --rm -it \
 		-e AWS_ACCESS_KEY \
 		-e AWS_SECRET_KEY \
@@ -42,6 +42,11 @@ purge-cache:
 		$(REGISTRY)/cf-reset-cache
 
 .PHONY: clean
-clean:
+clean: ## Clean most generated files
 	sudo $(RM) -r public
 	-@docker rm -vf blog > /dev/null 2>&1
+
+help: ## Print this help
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
+		sort | \
+		awk 'BEGIN {FS = ":.*?## "}; {printf "%-30s %s\n", $$1, $$2}'
