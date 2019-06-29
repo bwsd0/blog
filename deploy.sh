@@ -9,7 +9,7 @@ usage() {
 	exit 1
 }
 
-hugo
+hugo --minify
 
 if [ ! -d public ]; then
 	echo "error: public directory missing"
