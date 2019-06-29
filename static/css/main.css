@@ -2,7 +2,11 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 100%;
     color: #212121;
-    line-height: 1.6em;
+    line-height: 1.65em;
+}
+
+article {
+    margin: 0 0 50px;
 }
 
 #nav a {
@@ -28,12 +32,17 @@ body {
     font-size: 200%;
 }
 
+.toc-title {
+    font-size: 200%;
+}
+
 .toc-title a:visited, a {
     color: #212121;
 }
 
 a, a:visited {
     text-decoration: underline;
+    /*color: rgb(0,102,204);*/
 }
 
 h1,h2,h3,h4,h5 {

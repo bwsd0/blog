@@ -6,7 +6,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [menu]
     [[menu.nav]]
-        name = "Barry Wasdell's Blog"
+        name = "Barry's Blog"
         url = "/"
         weight = -100
     [[menu.nav]]
