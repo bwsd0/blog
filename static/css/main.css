@@ -33,11 +33,10 @@ body {
 }
 
 a, a:visited {
-    color: #1166BB;
     text-decoration: underline;
 }
 
-h1,h2,h3,h4 {
+h1,h2,h3,h4,h5 {
     margin-bottom: 10px;
 }
 
@@ -45,6 +44,7 @@ footer {
     color: #666;
     font-size: 0.875rem;
     margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
