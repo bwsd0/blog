@@ -4,15 +4,16 @@ title = "Barry Wasdell"
 canonifyURLs = true
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
+[frontmatter]
+date = ["date", "publishDate", "lastmod"]
+lastmod = [":git", "lastmod", "date", "publishDate"]
+publishDate = ["publishDate", "date"]
+
 [menu]
     [[menu.nav]]
         name = "Barry's Blog"
         url = "/"
         weight = -100
-    [[menu.nav]]
-        name = "Github"
-        weight = -80
-        url = "https://github.com/bwasd"
     [[menu.nav]]
         name = "Feed"
         weight = -70

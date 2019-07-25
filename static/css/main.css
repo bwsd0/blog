@@ -4,10 +4,10 @@ body {
     color: #212121;
     line-height: 1.65em;
     margin: 0;
+    padding: 0;
 }
 
 article {
-    /*margin: 0 0 50px;*/
     margin-bottom: 50px;
 }
 
@@ -17,13 +17,13 @@ article {
 }
 
 #nav {
-    margin: 0 auto 0 auto;
+    margin: 8px auto 0 auto;
     text-align: center;
 }
 
 #nav, ul {
     display: table;
-    list-style:none;
+    list-style: none;
 }
 
 .nav li {
@@ -31,8 +31,7 @@ article {
 }
 
 .title, .toc-title {
-    font-size: 24pt;
-    font-size: 24pt;
+    font-size: 24px;
 }
 
 a, a:visited {
@@ -41,7 +40,7 @@ a, a:visited {
 }
 
 a.ablack {
-    color: #212121 !important;
+    color: #1F3C93 !important;
 }
 
 h1,h2,h3,h4,h5 {
@@ -54,6 +53,10 @@ footer {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+}
+
+dt {
+    font-weight: bold;
 }
 
 #content {

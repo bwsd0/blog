@@ -1,22 +1,21 @@
 ---
-title: "About"
-date: 2019-06-05T09:21:00+02:00
+title: "Barry Wasdell (bwasd)"
 lastmod: 2019-06-09T08:03:16+02:00
 summary: whoami?
 ---
-
-### Barry Wasdell
-
 Programmer, living in Cape Town, South Africa.
 
-**email**
-<barryw@bwasd.io>
+Email
+: <barryw@bwasd.io>
 
-**github**
-[bwasd](https://github.com/bwasd)
+Curriculum vitae
+: `man <(curl https://bwasd.io/bwasd.7)`
 
-**pgp**
-[D5A5 D423 8AF9 2990 53A3  B9D6 7CD4 D9B1 4CFB 54E9](/static/barrywasdell@gmail.com.pub.asc)
+Social
+: [github](https://github.com/bwasd)
+
+PGP
+: [D5A5 D423 8AF9 2990 53A3  B9D6 7CD4 D9B1 4CFB 54E9](/keys/barrywasdell@gmail.com.pub.asc)
 
 ```pgp
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -61,8 +60,3 @@ RxSn3L8KqfHgiaiKupwUSNCP7X/Yqpv9uOkOrUhzb6NVEXjoZdvx+6lsg6aUZtPi
 =lqxI
 -----END PGP PUBLIC KEY BLOCK-----
 ```
-
-Unless otherwise noted, content on this site is made available under a [Creative
-Commons Attribution 4.0 International
-License](https://creativecommons.org/licenses/by/4.0/). Source code for this
-site is [MIT](https://opensource.org/licenses/MIT).
