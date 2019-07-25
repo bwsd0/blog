@@ -3,10 +3,12 @@ body {
     font-size: 100%;
     color: #212121;
     line-height: 1.65em;
+    margin: 0;
 }
 
 article {
-    margin: 0 0 50px;
+    /*margin: 0 0 50px;*/
+    margin-bottom: 50px;
 }
 
 #nav a {
@@ -15,7 +17,7 @@ article {
 }
 
 #nav {
-    margin: 8px auto 0 auto;
+    margin: 0 auto 0 auto;
     text-align: center;
 }
 
@@ -28,21 +30,18 @@ article {
     display: table-cell;
 }
 
-.title {
-    font-size: 200%;
-}
-
-.toc-title {
-    font-size: 200%;
-}
-
-.toc-title a:visited, a {
-    color: #212121;
+.title, .toc-title {
+    font-size: 24pt;
+    font-size: 24pt;
 }
 
 a, a:visited {
-    text-decoration: underline;
-    /*color: rgb(0,102,204);*/
+    text-decoration: none;
+    color: #336699;
+}
+
+a.ablack {
+    color: #212121 !important;
 }
 
 h1,h2,h3,h4,h5 {
@@ -66,5 +65,6 @@ footer {
 
 .time {
     color: #757575;
-    margin-bottom: 15px;
+    font-size: small;
+    margin: 15px 0px;
 }
