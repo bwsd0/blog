@@ -7,7 +7,7 @@ draft: false
 ["Rob Pike on the origin of dotfiles"](https://plus.google.com/101960720994009339267/posts/R58WgWwN9jp)
 Archived from the
 [original](https://web.archive.org/web/20190320095434/https://plus.google.com/+RobPikeTheHuman/posts/R58WgWwN9jp)
-on 20 March 2019.
+on 20 March 2019, and reposted here for posterity.
 
 A lesson in shortcuts.
 
