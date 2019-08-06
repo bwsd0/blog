@@ -26,11 +26,11 @@ deploy: build ## Upload content to S3
 		$(DOCKER_IMAGE)
 
 .PHONY: run
-run: clean build ## Build
+run: clean build ## Serve content locally
 	@docker run -d -v $(CURDIR):/usr/src/blog \
 		-p $(PORT):$(PORT) \
 		--name blog \
-		$(DOCKER_IMAGE) hugo server --port=$(PORT) --bind=0.0.0.0
+		$(DOCKER_IMAGE) hugo server -D --port=$(PORT) --bind=0.0.0.0
 
 .PHONY: purge-cache
 purge-cache: ## Invalidate CF CDN cache
@@ -46,6 +46,7 @@ clean: ## Clean most generated files
 	sudo $(RM) -r public
 	-@docker rm -vf blog > /dev/null 2>&1
 
+.PHONY: help
 help: ## Print this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 		sort | \
