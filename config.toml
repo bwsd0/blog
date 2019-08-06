@@ -3,6 +3,10 @@ languageCode = "en-us"
 title = "Barry Wasdell"
 canonifyURLs = true
 disableKinds = ["taxonomy", "taxonomyTerm"]
+summaryLength = 70
+
+[params]
+  AuthorName = "Barry Wasdell"
 
 [frontmatter]
 date = ["date", "publishDate", "lastmod"]

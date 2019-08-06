@@ -8,13 +8,10 @@ Programmer, living in Cape Town, South Africa.
 Email
 : <barryw@bwasd.io>
 
-Curriculum vitae
-: `man <(curl https://bwasd.io/bwasd.7)`
-
 Social
 : [github](https://github.com/bwasd)
 
-PGP
+<abbrev title="Pretty Good Privacy">PGP</abbrev>
 : [D5A5 D423 8AF9 2990 53A3  B9D6 7CD4 D9B1 4CFB 54E9](/keys/barrywasdell@gmail.com.pub.asc)
 
 ```pgp

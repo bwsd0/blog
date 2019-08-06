@@ -4,7 +4,7 @@
     <article>
         <h2 class="toc-title"><a class="ablack" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
         <div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
-            {{ .Summary }}
+        <div class="toc-summary">{{ .Summary }}</div>
     </article>
     {{ end }}
 </div>
