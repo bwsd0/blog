@@ -23,3 +23,8 @@ fi
 cd public
 
 s3cmd sync --delete-removed -P . s3://$AWS_S3_BUCKET/
+
+sitemap="https://${AWS_S3_BUCKET}/sitemap.xml"
+
+curl -sSL "https://www.google.com/ping?sitemap=${sitemap}"
+curl -sSL "http://www.bing.com/webmaster/ping.aspx?siteMap=${sitemap}"
