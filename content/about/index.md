@@ -6,7 +6,7 @@ summary: whoami?
 Programmer, living in Cape Town, South Africa.
 
 Email
-: <barryw@bwasd.io>
+: <barrywasdell@gmail.com>
 
 Social
 : [github](https://github.com/bwasd)
