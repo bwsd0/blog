@@ -2,25 +2,29 @@
 title: "Rob Pike on the origin of dotfiles"
 date: 2019-06-20T08:10:43+02:00
 draft: false
+summary: "A lesson in shortcuts"
 ---
+Note
+: _The original [Google+ post](https://plus.google.com/101960720994009339267/posts/R58WgWwN9jp) (dead link) by [Rob Pike](http://genius.cat-v.org/rob-pike/) is from August 3, 2012. This version was archived from the [original](https://web.archive.org/web/20190320095434/https://plus.google.com/+RobPikeTheHuman/posts/R58WgWwN9jp) on March 20 2019, and is reposted here for posterity._
 
-["Rob Pike on the origin of dotfiles"](https://plus.google.com/101960720994009339267/posts/R58WgWwN9jp)
-Archived from the
-[original](https://web.archive.org/web/20190320095434/https://plus.google.com/+RobPikeTheHuman/posts/R58WgWwN9jp)
-on 20 March 2019, and reposted here for posterity.
-
-A lesson in shortcuts.
+## A lesson in shortcuts.
 
 Long ago, as the design of the Unix file system was being worked out,
-the entries `.` and `..` appeared, to make navigation easier. I'm not
-sure but I believe `..` went in during the Version 2 rewrite, when the
+the entries "." and ".." appeared, to make navigation easier. I'm not
+sure but I believe ".." went in during the Version 2 rewrite, when the
 file system became hierarchical (it had a very different structure early
-on).  When one typed ls, however, these files appeared, so either Ken or
+on). When one typed ls, however, these files appeared, so either Ken or
 Dennis added a simple test to the program. It was in assembler then, but
-the code in question was equivalent to something like this: `if (name[0]
-== '.') continue;` This statement was a little shorter than what it
-should have been, which is `if (strcmp(name, ".") == 0 || strcmp(name,
-"..") == 0) continue;` but hey, it was easy.
+the code in question was equivalent to something like this:
+```c
+if (name[0] == '.') continue;
+```
+This statement was a little shorter than what it
+should have been, which is
+```c
+  if (strcmp(name, ".") == 0 || strcmp(name,"..") == 0) continue;
+```
+but hey, it was easy.
 
 Two things resulted.
 
