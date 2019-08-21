@@ -11,7 +11,6 @@ DOCKER_IMAGE := $(REGISTRY)/blog
 .PHONY: all
 all: deploy
 
-
 PORT := 1313
 
 .PHONY: build
@@ -34,13 +33,10 @@ run: build ## Serve content locally
 		$(DOCKER_IMAGE) hugo server -D --port=$(PORT) --bind=0.0.0.0
 
 .PHONY: purge-cache
-purge-cache: ## Invalidate CF CDN cache
-	@docker run --rm -it \
-		-e AWS_ACCESS_KEY \
-		-e AWS_SECRET_KEY \
-		-e AWS_CF_DISTRIBUTION_ID \
-		-e AWS_S3_BUCKET \
-		$(REGISTRY)/cf-reset-cache
+purge-cache: ## Invalidate all cached files from CloudFront edge servers
+	@aws cloudfront create-invalidation \
+		--distribution-id $(AWS_CF_DISTRIBUTION_ID) \
+		--paths "/*"
 
 .PHONY: clean
 clean: ## Clean most generated files

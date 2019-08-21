@@ -7,7 +7,7 @@ Running
 make deploy
 ```
 
-To invalidate all content from CloudFront edge caches invoke
+Invalidate all cached files CloudFront edge cache servers by invoking
 ```sh
 make purge-cache
 ```
