@@ -9,7 +9,7 @@ Email
 : <barrywasdell@gmail.com>
 
 Social
-: [github](https://github.com/bwasd)
+: [github](https://github.com/bwasd), [linkedin](https://www.linkedin.com/in/barry-barry-38ba49191/)
 
 <abbrev title="Pretty Good Privacy">PGP</abbrev>
 : [1444995EA28E4606A75BD7327BC21207AB08D788](/keys/barrywasdell@gmail.com.pub.asc)
