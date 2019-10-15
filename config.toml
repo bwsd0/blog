@@ -4,6 +4,7 @@ title = "Barry Wasdell"
 canonifyURLs = true
 disableKinds = ["taxonomy", "taxonomyTerm"]
 summaryLength = 70
+disableHugoGeneratorInject = true
 
 [params]
   AuthorName = "Barry Wasdell"
