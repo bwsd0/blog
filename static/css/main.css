@@ -3,12 +3,17 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Minion Pro';
     font-size: 100%;
     color: #212121;
     line-height: 1.6em;
     margin: 0;
-    padding: 0 1.5em;
+    padding: 1.5em 1.5em;
+}
+
+p {
+    font-size: 16px;
 }
 
 article {
@@ -18,7 +23,6 @@ article {
 #nav a {
     color: rgba(0,0,0,.54);
     margin-right: 14px;
-    text-decoration: underline;
 }
 
 #nav {
@@ -40,7 +44,7 @@ article {
 }
 
 .toc-title  {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .toc-summary {
@@ -62,7 +66,7 @@ h1,h2,h3,h4,h5 {
 
 footer {
     color: #666;
-    font-size: 0.875rem;
+    font-size: 82%;
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
@@ -76,7 +80,7 @@ dt {
     position: relative;
     margin: 0 auto;
     padding: 0;
-    max-width: 700px;
+    max-width: 560px;
 }
 
 .time {
