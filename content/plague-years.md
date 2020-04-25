@@ -16,6 +16,6 @@ method of fluxions and fluents..."):
 
 [1]: Whiteside, D. T. "Newton's Marvellous Year: 1666 and All That."
 Notes and Records of the Royal Society of London 21, no. 1 (1966):
-32-41. Accessed April 17, 2020. www.jstor.org/stable/530816.
+32-41. Accessed April 17, 2020. JSTOR [530816](https://www.jstor.org/stable/530816).
 
-[2]: Newton's Waste Book (MS Add.4004), fols 57r-57v
+[2]: Newton's Waste Book (MS Add.4004), [fols 57r-57v](https://cudl.lib.cam.ac.uk/view/MS-ADD-04004/1)
