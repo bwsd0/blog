@@ -1,6 +1,6 @@
 baseURL = "https://blog.bwasd.io"
 languageCode = "en-us"
-title = "Barry Wasdell"
+title = "Blog of Barry Wasdell"
 canonifyURLs = true
 disableKinds = ["taxonomy", "taxonomyTerm"]
 summaryLength = 70
