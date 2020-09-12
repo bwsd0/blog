@@ -4,7 +4,7 @@ date: 2020-09-12T17:07:21+02:00
 draft: false
 ---
 
-: The Black Death killed an estimated 25m million people in Europe, about a
+: The Black Death killed an estimated 25 million people in Europe, about a
 quarter of the population. In 1348 Henry Knighton, an English canon at the Abbey
 of St. Mary of the Meadows in Leicester wrote the following chronicle.
 
