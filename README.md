@@ -1,5 +1,5 @@
 # blog
-This blog is a static-site generated with Hugo.
+This serverless, static-site blog generated with Hugo.
 
 ## Deployment
 Running
