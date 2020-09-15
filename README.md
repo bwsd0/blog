@@ -15,7 +15,7 @@ make purge-cache
 ## Posting
 
 ```sh
-hugo new -c ./content foo.md -k post
+make post foo.md
 ```
 
 To serve locally (in a container) run
