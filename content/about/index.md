@@ -1,18 +1,27 @@
 ---
-title: "Barry Wasdell (bwasd)"
+title: "Barry Wasdell (bwsd0, bwsd)"
 lastmod: 2019-06-09T08:03:16+02:00
-summary: whoami?
+summary: About
 ---
-Programmer, living in Cape Town, South Africa.
 
-Email
-: <barrywasdell@gmail.com>
+I am a programmer living in Cape Town, South Africa.
 
-Social
-: [github](https://github.com/bwasd), [linkedin](https://www.linkedin.com/in/barry-wasdell-38ba49191/)
+## Email
+
+- <barry@bwsd.dev>
+
+## Social
+
+- [github](https://github.com/bwsd0)
+- [gitlab](https://gitlab.com/bwsd0)
+- [keybase](https://keybase.io/bwsd0)
+This profile has several identity proofs.
+- [linkedin](https://www.linkedin.com/in/barry-wasdell-38ba49191/)
 
 <abbrev title="Pretty Good Privacy">PGP</abbrev>
-: [1444995EA28E4606A75BD7327BC21207AB08D788](/keys/barrywasdell@gmail.com.pub.asc)
+: [3FDE 70BA 93DD 41CB BFC8  974D 8767 471E 3CEC 993D](/keys/barry@bwsd.dev.pub.asc)
+
+The public key block for this key:
 
 ```pgp
 -----BEGIN PGP PUBLIC KEY BLOCK-----

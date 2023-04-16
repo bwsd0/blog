@@ -1,0 +1,62 @@
+baseURL: 'https://blog.bwsd.dev'
+languageCode: en-us
+title: Blog of Barry Wasdell
+canonifyURLs: true
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+summaryLength: 30
+enableRobotsTXT: true
+disableHugoGeneratorInject: true
+params:
+  AuthorName: Barry Wasdell
+markup:
+  renderer:
+  highlight:
+    codeFences: false
+    style: ""
+    guessSyntax: false
+    tabWidth: 2
+frontmatter:
+  date:
+    - date
+    - publishDate
+    - lastmod
+  lastmod:
+    - ':git'
+    - lastmod
+    - date
+    - publishDate
+  publishDate:
+    - publishDate
+    - date
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: true
+  vimeo:
+    disable: true
+  youtube:
+    disable: true
+menu:
+  nav:
+    - name: Barry's Blog
+      url: /
+      weight: -100
+    - name: Contact
+      url: /contact
+      weight: -90
+    - name: RSS
+      url: /index.xml
+      weight: -70
+    - name: About
+      url: /about
+      weight: -50
+    - name: Projects
+      url: http://127.0.0.1:3000 --https://git.bwsd.dev
+      weight: -30

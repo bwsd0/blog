@@ -1,27 +1,103 @@
+* {
+    scrollbar-color: #454a4d #202324;
+}
+
+.anchor {
+    visibility: hidden;
+    display: inline-block;
+    padding-left: 0.25em;
+    /*color: #0594cb;*/
+    color: #9C9C9C;
+    vertical-align: middle;
+}
+
+:where(h2,h3,h4):hover .anchor{
+    display: inline-block;
+    visibility: visible;
+    color: #9C9C9C;
+    vertical-align: middle;
+}
+
 html {
     overflow-y:scroll;
 }
 
 body {
-    /* font-family: 'Open Sans', sans-serif; */
-    font-family: 'Minion Pro';
+    @import url('https://fonts.cdnfonts.com/css/franklin-gothic');
+    font-family: 'Franklin Gothic', sans-serif;
     font-size: 100%;
-    color: #212121;
+    /*color: #212121;*/
+    color: #ffffff;
+    background-color: #0a0e12;
     line-height: 1.6em;
     margin: 0;
     padding: 1.5em 1.5em;
+
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+header, footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+blockquote {
+    color: #a59d91;
 }
 
 p {
-    font-size: 16px;
+    font-size: 18px;
+    padding: 0;
+}
+
+code {
+    /* background-color: #f5f5f5; */
+    /* background-color: #161b22; */
+    background-color: #181818;
+    font-size: 14px;
+    font-family: Consolas, Monaco, "Lucida Console", monospace;
+    padding: .25em 0.5em .25em;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 1.6em;
+}
+
+pre code {
+    width: 100%;
+    display: block;
+    overflow-x: scroll;
+    scrollbar-width: initial;
+    white-space: pre-wrap;
+    Consolas, Monaco, "Lucida Console", monospace;
+    direction: ltr!important;
+}
+
+code.language-pgp {
+    padding: .25em 1.5em .25em;
+    width: fit-content;
 }
 
 article {
     margin-bottom: 50px;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 #nav a {
-    color: rgba(0,0,0,.54);
+    color: #ffffff;
     margin-right: 14px;
 }
 
@@ -30,7 +106,7 @@ article {
     text-align: center;
 }
 
-#nav, ul {
+#nav ul {
     display: table;
     list-style: none;
 }
@@ -39,37 +115,73 @@ article {
     display: table-cell;
 }
 
-.title, .toc-title {
-    font-size: 24px;
+a.ablack {
+    color: #fff !important;
 }
 
-.toc-title  {
-    text-decoration: none;
+table {
+    border-collapse: collapse;
+    background: #181818;
 }
 
-.toc-summary {
-    padding-left: 2em;
+th {
+    height: 48px;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+tr {
+    border: 0;
+    border-spacing: 0;
+    border-bottom: 1px solid #a59d91;
+}
+
+td {
+    padding: 8px 8px;
+    vertical-align: top;
+}
+
+td, th {
+    text-align: left;
+    border: 0;
+}
+
+thead {
+    vertical-align: middle;
+    background: #161b22;
+    height: 48px;
+}
+
+tbody {
+    border-spacing: 0;
 }
 
 a, a:visited {
     text-decoration: none;
-    color: #336699;
+    color: #50b7e0;
+    /* color: #1a73e8;*/
+    display: inline-flex;
 }
 
-a.ablack {
-    color: #212121 !important;
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
 }
 
 h1,h2,h3,h4,h5 {
     margin-bottom: 10px;
+    text-decoration: none;
 }
 
 footer {
-    color: #666;
-    font-size: 82%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    color: #9C9C9C;
+    font-size: .75rem;
     text-align: center;
+    padding: 20px;
 }
 
 dt {
@@ -81,10 +193,13 @@ dt {
     margin: 0 auto;
     padding: 0;
     max-width: 560px;
+    /*min-width: 600px;*/
+    flex-grow: 1;
 }
 
 .time {
-    color: #757575;
+    /*color: #757575; */
+    color: #9C9C9C;
     font-size: small;
     margin: 15px 0px;
 }

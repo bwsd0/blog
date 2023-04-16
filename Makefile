@@ -1,30 +1,26 @@
-AWS_S3_BUCKET := blog.bwasd.io
+AWS_S3_BUCKET := blog.bwsd.dev
 AWS_ACCESS_KEY := ${AWS_ACCESS_KEY_ID}
 AWS_SECRET_KEY := ${AWS_SECRET_ACCESS_KEY}
 AWS_CF_DISTRIBUTION_ID := ${AWS_CF_DISTRIBUTION_ID}
-
-export AWS_S3_BUCKET AWS_ACCESS_KEY AWS_SECRET_KEY
 
 .PHONY: all
 all: run 
 
 PORT := 1313
 
-.PHONY: deploy
-deploy: ## Upload content to S3
-	@./deploy.sh
-
 .PHONY: run
 run: ## Serve content locally
 	@hugo server -D --port=$(PORT) --bind=0.0.0.0
 
-# https://stackoverflow.com/a/47008498
-args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
-
-# FIXME: supress make error because file is being created
-.PHONY: post
-post: ## Make a new post
-	@hugo new -c ./content $(call args, foo.md) -k post  || true
+.PHONY: favicons
+favicons: ## Generate favicons for common resolutions
+	@echo "Generate favicons"
+	$(shell convert static/b.png  -background white \
+		\( -clone 0 -resize 16x16 -extent 16x16 \) \
+		\( -clone 0 -resize 32x32 -extent 32x32 \) \
+		\( -clone 0 -resize 48x48 -extent 48x48 \) \
+		\( -clone 0 -resize 64x64 -extent 64x64 \) \
+		-delete 0 -alpha on -colors 256 static/favicon.ico)
 
 .PHONY: purge-cache
 purge-cache: ## Invalidate all cached files from CloudFront edge servers

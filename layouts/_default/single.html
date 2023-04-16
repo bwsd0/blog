@@ -3,6 +3,7 @@
     <article>
         <h1 class="title">{{ .Title }}</h1>
             <div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
+            {{ partial "toc.html" . }}
             {{ .Content }}
     </article>
 </div>

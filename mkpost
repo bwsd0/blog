@@ -1,0 +1,23 @@
+#!/bin/sh
+
+usage() {
+  echo >&2 "Usage: $(basename "$0") [FILE]"; exit 2
+}
+
+if [ "$#" -ne 1 ]; then
+  usage
+fi
+
+# shellcheck disable=SC2060
+filename="$(echo "$1" \
+  | tr "[:lower:]" "[:upper:]" \
+  | tr [A-Z] [a-z] \
+  | tr " " "-" \
+  | sed 's/\.md//'
+)"
+
+if [ -z "$filename" ]; then
+  usage
+fi
+
+hugo new -c "$filename" ./content/"$filename".md -k post || true
