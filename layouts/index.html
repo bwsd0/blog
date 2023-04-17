@@ -2,7 +2,7 @@
 <div class="container home">
     {{ range (.Paginate ( first 10 .Pages.ByDate.Reverse )).Pages }}
     {{ with .Page }}
-    {{ if eq .Summary "About" }}
+    {{ if eq .Title "About" }}
     {{ else }}
     <article>
         <h1 class="toc-title"><a class="ablack" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
