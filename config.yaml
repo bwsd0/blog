@@ -48,15 +48,12 @@ menu:
     - name: Barry's Blog
       url: /
       weight: -100
-    - name: Contact
-      url: /contact
-      weight: -90
     - name: RSS
       url: /index.xml
-      weight: -70
+      weight: -90
     - name: About
       url: /about
-      weight: -50
+      weight: -70
     - name: Projects
       url: http://127.0.0.1:3000 --https://git.bwsd.dev
       weight: -30
