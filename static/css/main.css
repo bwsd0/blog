@@ -12,6 +12,12 @@
     scrollbar-color: #454a4d #202324;
 }
 
+summary {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .anchor {
     visibility: hidden;
     display: inline-block;
@@ -39,7 +45,6 @@ body {
     /*color: #212121;*/
     color: #ffffff;
     background-color: #0a0e12;
-    line-height: 1.6em;
     margin: 0;
     padding: 1.5em 1.5em;
 
@@ -47,6 +52,7 @@ body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    word-wrap: break-word;
 }
 
 html, body {
@@ -68,6 +74,7 @@ blockquote {
 p {
     font-size: 18px;
     padding: 0;
+    line-height: 1.6em;
 }
 
 code {
@@ -132,7 +139,9 @@ a.ablack {
 
 table {
     border-collapse: collapse;
-    background: #181818;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 th {
@@ -140,12 +149,15 @@ th {
     vertical-align: middle;
     padding-left: 10px;
     padding-right: 10px;
+    background: #161b22;
 }
 
 tr {
     border: 0;
     border-spacing: 0;
-    border-bottom: 1px solid #a59d91;
+    /*border-bottom: 1px solid #a59d91;*/
+    border-bottom: 1px solid #30363d;
+
 }
 
 td {
@@ -204,7 +216,7 @@ dt {
     margin: 0 auto;
     padding: 0;
     max-width: 560px;
-    /*min-width: 600px;*/
+    width: 100%;
     flex-grow: 1;
 }
 
