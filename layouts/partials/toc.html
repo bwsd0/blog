@@ -1,6 +1,6 @@
 {{ if (gt .WordCount 500 ) }}
-<aside>
-    <h2>Contents</h2>
+<details aria-label="On this page" role="navigation">
+    <summary>Contents</summary>
     {{ .TableOfContents }}
-</aside>
+</details>
 {{ end }}
