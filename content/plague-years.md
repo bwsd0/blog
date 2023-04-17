@@ -3,10 +3,7 @@ title: "The Plague Years of 1665 and 1666"
 date: 2020-04-25T01:20:30+02:00
 draft: false
 summary: "Newton's most productive years (\"annus mirabilis\") were during the Great Plague"
-keywords:
-  - "The Great Plague"
-  - "Isaac Newton"
-  - "Calculus"
+description: "Newton's most productive years"
 ---
 
 In 1666, when Cambridge University had been closed due to the Great
