@@ -1,0 +1,145 @@
+html {
+    overflow-y:scroll;
+}
+
+body {
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Minion Pro';
+    font-size: 100%;
+    color: #212121;
+    line-height: 1.6em;
+    margin: 0;
+    padding: 1.5em 1.5em;
+}
+
+.anchor {
+    visibility: hidden;
+    display: inline-block;
+    padding-left: 0.25em;
+    color: #585b63;
+    vertical-align: middle;
+}
+
+:where(h2,h3,h4):hover .anchor{
+    display: inline-block;
+    visibility: visible;
+    color: #9C9C9C;
+    vertical-align: middle;
+}
+
+p {
+    font-size: 18px;
+}
+
+article {
+    margin-bottom: 50px;
+}
+
+#nav a {
+    color: rgba(0,0,0,.54);
+    margin-right: 14px;
+}
+
+#nav {
+    margin: 8px auto 0 auto;
+    text-align: center;
+}
+
+#nav, ul {
+    display: table;
+    list-style: none;
+}
+
+.nav li {
+    display: table-cell;
+}
+
+.title, .toc-title {
+    font-size: 32px;
+}
+
+.toc-title  {
+    text-decoration: none;
+}
+
+.toc-summary {
+    padding-left: 2em;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: #336699;
+}
+
+a.ablack {
+    color: #212121 !important;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h1,h2,h3,h4,h5 {
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer {
+    color: #666;
+    font-size: 82%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+dt {
+    font-weight: bold;
+}
+
+#content {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 560px;
+}
+
+.time {
+    color: #757575;
+    font-size: small;
+    margin: 15px 0px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    padding: 7px 8px 8px;
+}
+
+th {
+    height: 48px;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #e8eaed;
+}
+
+tr {
+    border: 0;
+    border-spacing: 0;
+    border-bottom: 1px solid rgb(218,220,224);
+    /*border-bottom: 1px solid #a59d91;*/
+}
+
+pre code {
+    display: block;
+    background: #f8f8f8;
+    overflow-x: auto;
+}
+
+details summary {
+    font-size: 24px;
+}
