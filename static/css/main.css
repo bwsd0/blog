@@ -53,6 +53,7 @@ body {
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
+    overflow-x: hidden;
 }
 
 html, body {
@@ -75,6 +76,7 @@ p {
     font-size: 18px;
     padding: 0;
     line-height: 1.6em;
+    max-width: 80ch;
 }
 
 code {
@@ -96,9 +98,9 @@ pre code {
     display: block;
     overflow-x: scroll;
     scrollbar-width: initial;
-    white-space: pre-wrap;
-    Consolas, Monaco, "Lucida Console", monospace;
+    font-family: Consolas, Monaco, "Lucida Console", monospace;
     direction: ltr !important;
+    padding: 24px;
 }
 
 code.language-pgp {
@@ -108,6 +110,8 @@ code.language-pgp {
 
 article {
     margin-bottom: 50px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 a:hover {
@@ -120,7 +124,7 @@ a:hover {
 }
 
 #nav {
-    margin: 8px auto 0 auto;
+    margin: 10px auto 0 auto;
     text-align: center;
 }
 
