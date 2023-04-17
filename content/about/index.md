@@ -1,7 +1,8 @@
 ---
-title: "Barry Wasdell (bwsd0, bwsd)"
+title: "About"
 lastmod: 2019-06-09T08:03:16+02:00
-summary: About
+summary: "About page for Barry Wasdell"
+description: "About page for Barry Wasdell"
 ---
 
 I am a programmer living in Cape Town, South Africa.
@@ -9,14 +10,20 @@ I am a programmer living in Cape Town, South Africa.
 ## Email
 
 - <barry@bwsd.dev>
+- <barrywasdell@gmail.com>
 
 ## Social
 
 - [github](https://github.com/bwsd0)
 - [gitlab](https://gitlab.com/bwsd0)
+
+Note, for personal projects the canonical repositories will be hosted at
+[git.bwsd.dev](https://git.bwsd.dev).
+
 - [keybase](https://keybase.io/bwsd0)
-This profile has several identity proofs.
+_Inactive_, however the identity proofs are valid.
 - [linkedin](https://www.linkedin.com/in/barry-wasdell-38ba49191/)
+_Semi-active_, but expect delayed replies; email for fast replies.
 
 <abbrev title="Pretty Good Privacy">PGP</abbrev>
 : [3FDE 70BA 93DD 41CB BFC8  974D 8767 471E 3CEC 993D](/keys/barry@bwsd.dev.pub.asc)
