@@ -4,9 +4,6 @@ date: 2023-04-16T23:25:47+02:00
 draft: false
 summary: "Testing page summary"
 description: "Testing page description"
-keywords:
-  - test
-  - development
 ---
 
 ## Heading 2
@@ -102,5 +99,3 @@ EOF
 ## Links
 
 TODO
-
-
