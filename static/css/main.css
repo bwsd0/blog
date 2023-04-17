@@ -18,6 +18,15 @@ summary {
     margin-bottom: 10px;
 }
 
+#TableOfContents {
+    font-size: 18px;
+    line-height: 1.7em;
+}
+
+#TableOfContents * {
+    list-style: none;
+}
+
 .anchor {
     visibility: hidden;
     display: inline-block;
@@ -69,7 +78,7 @@ header, footer {
 }
 
 blockquote {
-    color: #a59d91;
+    color: #9c9c9c;
 }
 
 p {
@@ -227,6 +236,6 @@ dt {
 .time {
     /*color: #757575; */
     color: #9c9c9c;
-    font-size: small;
+    font-size: 14px;
     margin: 15px 0px;
 }
