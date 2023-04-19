@@ -5,9 +5,9 @@
     <meta name="description" content="{{ .Description | default .Site.Params.Description }}">
     <meta name="robots" content="noindex">
     <title>{{ .Title | default .Site.Title }}</title>
-    {{ with .OutputFormats.Get "RSS" }}
-    <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
-    {{ end }}
+    {{ range .AlternativeOutputFormats -}}
+      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
 </head>
