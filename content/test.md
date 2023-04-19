@@ -61,12 +61,81 @@ laoreet.
 
 ## Quoting
 
+### Blockquotes
+
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend erat id
 purus sodales, id convallis felis aliquam. Nunc vel diam ac nulla feugiat
 elementum a eu augue. Morbi sem turpis, sollicitudin ut ipsum non, semper
 molestie arcu. Suspendisse potenti. Nam eu dapibus ex. Phasellus vehicula
 vehicula risus ac mattis. Etiam accumsan arcu at euismod venenatis. Praesent
 metus ante, consequat quis tortor id, ultricies euismod ipsum.
+
+### Nested blockquotes
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+>> The Witch bade her clean the pots and kettles and sweep the floor and keep
+>> the fire fed with wood.
+
+### Blockquotes with other elements
+
+> #### The quarterly results look great!
+>
+> - Revenue was off the chart.
+> - Profits were higher than ever.
+>
+>  *Everything* is going according to **plan**.
+
+## Emphasis
+
+### Bold
+
+I just love **bold text**.
+Love**is**bold
+
+### Italics
+
+Italicized text is the *cat's meow*.
+A*cat*meow
+
+### Italics + Bold
+
+This text is ***really important***.
+
+
+## Lists
+
+### Ordered
+
+1. First item
+2. Second item
+3. Third item
+4. Fourth item
+
+## Indented
+
+1. First item
+2. Second item
+3. Third item
+	1. Indented item
+	2. Indented item
+4. Fourth item
+
+## Unordered
+
+- First item
+- Second item
+- Third item
+- Fourth item
+
+## Indented
+
+- First item
+- Second item
+- Third item
+	- Indented item
+	- Indented item
+- Fourth item
 
 ## Tables
 
@@ -77,10 +146,14 @@ metus ante, consequat quis tortor id, ultricies euismod ipsum.
 | -  | 1 | 1 | 0 | 1 |
 | 0  | 1 | 1 | 0 | 0 |
 
+*table 1*
+
 | A | B | 
 |---|---|
 | 1 | 1 |
 | 0 | 1 |
+
+*table 2*
 
 ## Code
 
@@ -98,4 +171,8 @@ EOF
 
 ## Links
 
-TODO
+Link 1[^1]
+Link 82[^82]
+
+[^1]: https://example.com
+[^82]: https://example.com
