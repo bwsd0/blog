@@ -20,4 +20,4 @@ if [ -z "$filename" ]; then
   usage
 fi
 
-hugo new -c "$filename" ./content/"$filename".md -k post || true
+hugo new --editor="$EDITOR" "$filename".md -c content -k post || true
