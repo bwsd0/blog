@@ -1,237 +1,420 @@
+@font-face {
+  font-family: Inconsolata;
+  src: url('/fonts/Inconsolata.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-    --primary-color: #0a0e12;
-    --secondary-color: #ffffff;
-    --time-color: #9c9c9c;
-    --link-color: #202124;
-    --footer-color: #9C9C9C;
-    --blockquote-color: #a59d91;
-    --code-background-color: #161b22;
+  --black: #000;
+  --blockquote-border: 4px solid #ddd;
+  --blue-1: #1a73e8;
+  --code-font-family: 'Inconsolata', monospace;
+  --color-stroke: #d2d3d7;
+  --font-size-x: calc(clamp(1.75rem, 1.39rem + 1.07vw, 2.75rem) * 1.0 );
+  --font-size-xx: calc(clamp(1.5rem, 1.29rem + 1.07vw, 2.25rem) * 1.0 );
+  --font-size-xxx: clamp(1.25rem, 1.11rem + 0.71vw, 1.75rem);
+  --font-size-xxxx: clamp(1.125rem, 1.09rem + 0.18vw, 1.25rem);
+  --gray-1: #767676;
+  --gray-2: #f9f9f9;
+  --gray-3: #252937;
+  --gray-4: #585b63;
+  --gray-5: #f9f9f9;
+  --gray-6: #dadce0;
+  --primary-font-family: lora,'Palatino Linotype','Book Antiqua','New York','DejaVu serif';
+  --line-height: 1.6em;
+  --toc-vert-space: 0.5rem;
+  --white: #fff;
 }
 
 * {
-    scrollbar-color: #454a4d #202324;
+  scrollbar-color: #454a4d #202324;
 }
 
-summary {
-    font-size: 24px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-#TableOfContents {
-    font-size: 18px;
-    line-height: 1.7em;
-}
-
-#TableOfContents * {
-    list-style: none;
-}
-
-.anchor {
-    visibility: hidden;
-    display: inline-block;
-    padding-left: 0.25em;
-    /*color: #0594cb;*/
-    color: #9C9C9C;
-    vertical-align: middle;
-}
-
-:where(h2,h3,h4):hover .anchor{
-    display: inline-block;
-    visibility: visible;
-    color: #9C9C9C;
-    vertical-align: middle;
-}
-
-html {
-    overflow-y:scroll;
-}
-
-body {
-    @import url('https://fonts.cdnfonts.com/css/franklin-gothic');
-    font-family: 'Franklin Gothic', sans-serif;
-    font-size: 100%;
-    color: #ffffff;
-    background-color: #0a0e12;
-    margin: 0;
-    padding: 1.5em 1.5em;
-
-    box-sizing: border-box;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    word-wrap: break-word;
-    overflow-x: hidden;
-}
-
-html, body {
-    box-sizing: border-box;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-header, footer {
-    flex-grow: 0;
-    flex-shrink: 0;
-}
-
-blockquote {
-    color: #9c9c9c;
-}
-
-p {
-    font-size: 18px;
-    padding: 0;
-    line-height: 1.6em;
-    max-width: 80ch;
-}
-
-code {
-    /* background-color: #f5f5f5; */
-    background-color: #161b22;
-    /* background-color: #181818; */
-    color: #eceff1;
-    font-size: 14px;
-    font-family: Consolas, Monaco, "Lucida Console", monospace;
-    padding: .25em 0.5em .25em;
-    border-radius: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    line-height: 1.6em;
-}
-
-pre code {
-    width: 100%;
-    display: block;
-    overflow-x: scroll;
-    scrollbar-width: initial;
-    font-family: Consolas, Monaco, "Lucida Console", monospace;
-    direction: ltr !important;
-    padding: 24px;
-}
-
-code.language-pgp {
-    padding: .25em 1.5em .25em;
-    width: fit-content;
-}
-
-article {
-    margin-bottom: 50px;
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-#nav a {
-    color: #ffffff;
-    margin-right: 14px;
-}
-
-#nav {
-    margin: 10px auto 0 auto;
-    text-align: center;
-}
-
-#nav ul {
-    display: table;
-    list-style: none;
-}
-
-.nav li {
-    display: table-cell;
-}
-
-a.ablack {
-    color: #fff !important;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-th {
-    height: 48px;
-    vertical-align: middle;
-    padding-left: 10px;
-    padding-right: 10px;
-    background: #161b22;
-}
-
-tr {
-    border: 0;
-    border-spacing: 0;
-    border-bottom: 1px solid #30363d;
-
-}
-
-td {
-    padding: 8px 8px;
-    vertical-align: top;
-}
-
-td, th {
-    text-align: left;
-    border: 0;
-}
-
-thead {
-    vertical-align: middle;
-    background: #161b22;
-    height: 48px;
-}
-
-tbody {
-    border-spacing: 0;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 a, a:visited {
-    text-decoration: none;
-    color: #50b7e0;
-    display: inline-flex;
+  text-decoration: none;
+  color: var(--blue-1);
+  display: inline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a[rel*="external"] > span {
+  padding-left: .25em;
+}
+
+a.footnote-ref::before {
+  content: '[';
+}
+
+a.footnote-ref::after {
+  content: ']';
+}
+
+:where(h2,h3,h4,h5,h6) > a:first-child {
+  display: none;
+  padding-left: 0.2em;
+  color: var(--gray-4);
+  font-size: inherit;
+}
+
+:where(h2,h3,h4,h5,h6):hover > a:first-child {
+  display: inline-block;
+  padding-left: 0.2em;
+  color: var(--gray-4);
+  font-size: inherit;
+}
+
+abbr {
+  text-decoration: underline;
+}
+
+nav {
+  font-size: var(--font-size-xxxx);
+}
+
+ul, li, ol {
+  line-height: var(--line-height);
+  margin: 0 !important;
+}
+
+/* FIXME: wrap table elements in a div to allow scrolling when overflow occurs
+ */
+table {
+  border-collapse: collapse;
+  font-family: var(--code-font-family);
+  font-size: .8438em;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+th {
+  background: var(--gray-2);
+  font-family: var(--primary-font-family), sans-serif;
+  height: 48px;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  vertical-align: middle;
+}
+
+tr {
+  border: 0;
+  border-bottom: 1px solid var(--gray-6);
+  border-spacing: 0;
+  border-top: 1px solid var(--gray-6);
+}
+
+thead tr {
+  background-color: var(--gray-2);
+}
+
+td {
+  padding: 7px 8px 8px;
+  vertical-align: top;
+}
+
+td, th {
+  border: 0;
+  padding: .8em .5em;
+  text-align: left;
+}
+
+thead {
+  background: #161b22;
+  height: 48px;
+  vertical-align: middle;
+}
+
+tbody {
+  border-spacing: 0;
+}
+
+address,
+aside,
+blockquote,
+body,
+br,
+cite,
+details,
+dl,
+dt,
+figure,
+figcaption,
+img,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+html,
+nav,
+p,
+pre,
+summary,
+sup,
+time
+{
+  margin:0;
 }
 
 h1 {
-    font-size: 32px;
+  font-size: var(--font-size-x);
 }
 
 h2 {
-    font-size: 24px;
+  font-size: var(--font-size-xx);
 }
 
-h1,h2,h3,h4,h5 {
-    margin-bottom: 10px;
-    text-decoration: none;
+h3 {
+  font-size: var(--font-size-xxx);
 }
 
-footer {
-    color: #9C9C9C;
-    font-size: .75rem;
-    text-align: center;
-    padding: 20px;
+h4,h5,h6 {
+  font-size: calc(var(--font-size-xxx) * 0.75);
+}
+
+h1,h2,h3,h4,h5,h6 {
+  display: inline-flex;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul,details {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+details {
+  margin-bottom: 0;
 }
 
 dt {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+.title {
+  font-size: var(--font-size-x);
+}
+
+.title * {
+  color: var(--black) !important;
+}
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--primary-font-family), serif;
+  font-size: 1.25em;
+  min-height: 100%;
+  overflow-x: hidden;
+  padding: 1.5em 1.5em;
+  word-wrap: break-word;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  color: var(--gray-1);
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  line-height: 1.3em;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center;
+}
+
+header {
+  display:flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+blockquote {
+  border-left: var(--blockquote-border);
+  color: var(--gray-1);
+  padding-left: 2rem;
+}
+
+p {
+  line-height: var(--line-height);
+  max-width: 80ch;
+  padding: 0;
+}
+
+code {
+  background-color: var(--gray-2);
+	border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: .8438em;
+  line-height: var(--line-height);
+  padding: .15em .15em;
+  padding-left: 5px;
+  padding-right: 5px;
+  tab-size: 2;
+}
+
+pre code {
+  word-spacing: 0 !important;
+}
+
+pre > code {
+  direction: ltr !important;
+  display: block;
+  font-family: var(--code-font-family);
+  font-size: 1rem;
+  overflow-x: scroll;
+  padding: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  scrollbar-width: initial;
+}
+
+article {
+  margin-bottom: 50px;
+  padding: 0 1.5rem
+}
+
+hr {
+  background: #ccc;
+  border: 0;
+  height: 1px;
+  text-align: center;
+}
+
+summary {
+  font-size: 24px;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+dl {
+  line-height: var(--line-height);
+}
+
+time {
+  color: var(--gray-4);
+  display: inline-flex;
+  font-size: var(--font-size-xxxx);
+}
+
+ul {
+  list-style: disc outside;
+  margin-top: 0 !important;
+}
+
+details summary {
+  font-size: 1.6em;
+  color: var(--gray-3);
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+sup {
+  margin-left: .1em;
+}
+
+.footnotes {
+  font-size: 0.85em;
+}
+
+#nav {
+  align-items: center;
+  display: flex;
+  font-size: var(--font-size-xxxx);
+  height: 3.5rem;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+#nav a {
+  color: var(--gray-3);
+  font-weight: bold;
+  margin-right: 0.55em;
+}
+
+#nav ul {
+  list-style: none;
+}
+
+.nav li {
+  display: table-cell;
+}
+
+.nav {
+  padding: 0;
+}
+
+#TableOfContents * {
+  color: var(--gray-4);
+  line-height: 1.5em;
+  list-style: none;
+  padding-left: 0.2rem;
+}
+
+#TableOfContents li {
+  padding-block: calc(var(--toc-vert-space) / 2);
+  padding-inline-start: 1.25rem;
+}
+
+#TableOfContents ul ul {
+  margin-block: calc(var(--toc-vert-space)/2);
+  padding-block: calc(var(--toc-vert-space) / 2);
+  padding-inline-start: 1.25rem;
+}
+
+#TableOfContents ul li ul li {
+  border-left: 1px solid var(--color-stroke);
+}
+
+.b {
+  display: block;
+  height: 2.5em;
+  margin-right: 2.25rem;
+  width: 2.5em;
+}
+
+a.dead-link, a.dead-link:hover, a.dead-link:visited {
+  color: red;
+  text-decoration: line-through;
 }
 
 #content {
-    position: relative;
-    margin: 0 auto;
-    padding: 0;
-    max-width: 560px;
-    width: 100%;
-    flex-grow: 1;
-}
-
-.time {
-    color: #9c9c9c;
-    font-size: 14px;
-    margin: 15px 0px;
+  flex-grow: 1;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0;
+  position: relative;
+  width: 100%;
 }
