@@ -3,6 +3,9 @@ AWS_ACCESS_KEY := ${AWS_ACCESS_KEY_ID}
 AWS_SECRET_KEY := ${AWS_SECRET_ACCESS_KEY}
 AWS_CF_DISTRIBUTION_ID := ${AWS_CF_DISTRIBUTION_ID}
 
+HTMLTEST_VERSION=latest
+export HTMLTEST_VERSION
+
 .PHONY: all
 all: run 
 
@@ -10,26 +13,31 @@ PORT := 1313
 
 .PHONY: run
 run: ## Serve content locally
-	@hugo server -D --port=$(PORT) --bind=0.0.0.0
+	@hugo server -b localhost -D --port=$(PORT) --bind=0.0.0.0
+
+.PHONY: build
+build: # build with production settings
+	@hugo --cleanDestinationDir --minify --environment production
 
 .PHONY: favicons
 favicons: ## Generate favicons for common resolutions
 	@echo "Generate favicons"
-	$(shell convert static/b.png  -background white \
-		\( -clone 0 -resize 16x16 -extent 16x16 \) \
-		\( -clone 0 -resize 32x32 -extent 32x32 \) \
-		\( -clone 0 -resize 48x48 -extent 48x48 \) \
-		\( -clone 0 -resize 64x64 -extent 64x64 \) \
-		-delete 0 -alpha on -colors 256 static/favicon.ico)
+	./scripts/favicons static/b.png static/favicon.ico
 
-.PHONY: purge-cache
-purge-cache: ## Invalidate all cached files from CloudFront edge servers
-	@aws cloudfront create-invalidation \
-		--distribution-id $(AWS_CF_DISTRIBUTION_ID) \
-		--paths "/*"
+.PHONY: rm-exif
+rm-exif: ## remove EXIF metadata from images
+	@echo "Scrub image metadata"
+	./scripts/rm-exif
+
+.PHONY: test
+test: ## run tests on generated HTML
+	@docker pull wjdp/htmltest:$(HTMLTEST_VERSION)
+	@hugo --cleanDestinationDir -b http://localhost:$(PORT) --environment development
+	@docker run -w "/test" --mount "type=bind,source=$(CURDIR),target=/test" --rm \
+		wjdp/htmltest:$(HTMLTEST_VERSION) -c /test/.htmltest.yml
 
 .PHONY: clean
-clean: ## Clean most generated files
+clean: ## clean most generated files
 	@rm -rf public resources
 	-@hugo --quiet --gc
 
