@@ -4,6 +4,4 @@ date: {{ .Date }}
 draft: true
 summary: "-"
 description: "-"
-keywords:
-  - untagged
 ---
