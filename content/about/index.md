@@ -5,108 +5,56 @@ summary: "About page for Barry Wasdell"
 description: "About page for Barry Wasdell"
 ---
 
-I am a programmer living in Cape Town, South Africa.
+**Barry Wasdell**
 
-## Email
+**Email**:
+{{<email>}}
 
-- <barry@bwsd.dev>
-- <barrywasdell@gmail.com>
+**Timezone**:
+[UTC +02:00](https://time.nmisa.org/)
+
+I am a programmer.
 
 ## Social
 
-- [github](https://github.com/bwsd0)
-- [gitlab](https://gitlab.com/bwsd0)
+- [Keybase](https://keybase.io/bwsd0) - Inactive but the identity
+	proofs listed on my profile are valid.
+- [LinkedIn](https://www.linkedin.com/in/barry-wasdell-38ba49191/) - Were it not
+	for [network effects](https://en.wikipedia.org/wiki/Network_effect) I would
+	not be on this platform.
+- [GitHub.com](https://github.com/bwsd0)
+- [GitLab.com](https://gitlab.com/bwsd0)
 
-Note, for personal projects the canonical repositories will be hosted at
-[git.bwsd.dev](https://git.bwsd.dev).
+## GPG Keys
 
-- [keybase](https://keybase.io/bwsd0)
-_Inactive_, however the identity proofs are valid.
-- [linkedin](https://www.linkedin.com/in/barry-wasdell-38ba49191/)
-_Semi-active_, but expect delayed replies; email for fast replies.
+I use [GnuPG](https://gnupg.com) with separate subkeys for signing,
+authentication and encryption, certified by the following master key:
 
-<abbrev title="Pretty Good Privacy">PGP</abbrev>
-: [3FDE 70BA 93DD 41CB BFC8  974D 8767 471E 3CEC 993D](/keys/barry@bwsd.dev.pub.asc)
+```
+pub   rsa4096/0x8767471E3CEC993D 2023-03-13 [C]
+      Key fingerprint = 3FDE 70BA 93DD 41CB BFC8  974D 8767 471E 3CEC 993D
+uid                   [ultimate] Barry Wasdell <barry@bwsd.dev>
+```
 
-The public key block for this key:
+To import public keys belonging to me, use the following command:
 
-```pgp
------BEGIN PGP PUBLIC KEY BLOCK-----
+```bash
+$ gpg2 --locate-keys barry@bwsd.dev
+```
 
-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
-kGYYSrO/ZY4wqsF9
-=CSC/
------END PGP PUBLIC KEY BLOCK-----
+This will lookup public keys from [bwsd.dev](https://bwsd.dev) using the Web Key
+Directory (WKD) protocol.
+
+### Encryption Key
+
+```
+sub   rsa4096/0x6831BEF4608D0372 2023-03-13 [E] [expires: 2024-03-12]
+      Key fingerprint = 11C5 C76E B2AC 2899 19C5  79EC 6831 BEF4 608D 0372
+```
+
+### Signing Key
+
+```
+sub   rsa4096/0x6E900CB6155C3C4A 2023-03-13 [S] [expires: 2024-03-12]
+      Key fingerprint = 1C0D 6A19 BD01 AE6E 4122  FEEB 6E90 0CB6 155C 3C4A
 ```
