@@ -1,8 +1,7 @@
 {{ define "main" }}
-    <div class="container">
-        <div>
-            <h1>404</h1>
-            <h5 id="title"><a href="{{ "/" | relURL }}">Go back</a></h5>
-        </div>
-    </div>
-{{ end }}
+<div>
+  <h1 class="title">404 - Not Found</h1>
+  <p>The requested requested object does not exist on this server.</p>
+  <p><a href="{{ "" | relURL }}"><strong>Go back</strong></a></p>
+</div>
+{{- end }}
