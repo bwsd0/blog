@@ -1,16 +1,17 @@
 {{ define "main" }}
 <div class="container home">
-    {{ range (.Paginate ( first 10 .Pages.ByDate.Reverse )).Pages }}
-    {{ with .Page }}
-    {{ if eq .Title "About" }}
-    {{ else }}
-    <article>
-        <h1 class="toc-title"><a class="ablack" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
-        <div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
-        <div class="toc-summary"><p>{{ .Summary | safeHTML }}</p></div>
-    </article>
-    {{ end }}
-    {{ end }}
-    {{ end }}
+  {{ range (.Paginate ( first 10 .Pages.ByDate.Reverse )).Pages }}
+  {{ with .Page }}
+  {{ if eq .Title "About" }}{{ else }}
+  {{ if eq .Title "Privacy policy" }}{{ else }}
+  <article>
+    <h1 class="title"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+    <time content="{{ .Date }}">{{ .Date.Format "Monday, January 2, 2006" }}</time>
+    <div class="toc-summary"><p>{{ .Summary | safeHTML }}</p></div>
+  </article>
+  {{ end }}
+  {{ end }}
+  {{ end }}
+  {{ end }}
 </div>
 {{ end }}
