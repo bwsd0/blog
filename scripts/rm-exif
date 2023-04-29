@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# strip exif data from image formats
+
+find ./static -type f -regextype posix-extended \
+  -regex ".*\.(jpeg|jpg|png|gif)" -exec exiftool -all= -overwrite_original {} \;
