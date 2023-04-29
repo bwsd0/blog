@@ -1,0 +1,9 @@
+<address>
+  {{ if .Site.Params.Address }}
+  {{ range $k, $v := .Site.Params.Address }}
+  {{ if $v }}
+  {{ $v | safeHTML }}</br>
+  {{- end }}
+  {{- end }}
+  {{- end }}
+</address>
