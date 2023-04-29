@@ -1,18 +1,20 @@
 baseURL: 'https://blog.bwsd.dev'
 languageCode: en-us
 title: Blog of Barry Wasdell
-canonifyURLs: true
+canonifyURLs: false
 disableKinds:
   - taxonomy
   - taxonomyTerm
 summaryLength: 30
-enableRobotsTXT: true
+enableRobotsTXT: false
 disableHugoGeneratorInject: true
+enableInlineShortcodes: true
 params:
   AuthorName: Barry Wasdell
+  AuthorEmail: barry@bwsd.dev
   Description: "Barry's blog"
 markup:
-  renderer:
+  goldmark:
   highlight:
     codeFences: false
     style: ""
@@ -50,15 +52,15 @@ outputs:
     - RSS
 menu:
   nav:
-    - name: Barry's Blog
+    - name: Home
       url: /
       weight: -100
-    - name: RSS
+    - name: Feed
       url: /index.xml
       weight: -90
     - name: About
       url: /about
       weight: -70
     - name: Code
-      url: http://127.0.0.1:3000 --https://git.bwsd.dev
+      url: https://git.bwsd.dev
       weight: -30
