@@ -1,1 +1,1 @@
-<h{{ .Level }} title="Permalink to this headline" id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}<a class="anchor" aria-hidden="true" hidden href="#{{ .Anchor | safeURL }}">#</a></h{{ .Level }}>
+<h{{ .Level }} title="Permalink for {{ .Text }}" id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}<a class="anchor" aria-hidden="true" href="#{{ .Anchor | safeURL }}">#</a></h{{ .Level }}>
