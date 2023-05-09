@@ -25,7 +25,12 @@ RUN apk add --no-cache \
     openssh-client \
     rsync \
     npm && \
-    npm install -D csso@5.0.5
+    npm install -D tailwindcss postcss autoprefixer
+
+RUN apk update && apk add --no-cache \
+    python3 \
+    py3-pip \
+    && pip install --no-cache-dir svgcheck
 
 RUN mkdir -p /var/hugo && \
     addgroup -Sg 1000 hugo && \
