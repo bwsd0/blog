@@ -11,7 +11,7 @@ description: "About page for Barry Wasdell"
 {{<email>}}
 
 **Timezone**:
-[UTC +02:00](https://time.nmisa.org/)
+South African Standard Time [(UTC +02:00)](https://time.nmisa.org/)
 
 I am a programmer.
 
@@ -19,16 +19,15 @@ I am a programmer.
 
 - [Keybase](https://keybase.io/bwsd0) - Inactive but the identity
 	proofs listed on my profile are valid.
-- [LinkedIn](https://www.linkedin.com/in/barry-wasdell-38ba49191/) - Were it not
-	for [network effects](https://en.wikipedia.org/wiki/Network_effect) I would
-	not be on this platform.
+- [LinkedIn](https://www.linkedin.com/in/barry-wasdell-38ba49191/) - Alas, [network effects](https://en.wikipedia.org/wiki/Network_effect) network effects compel me to use this platform.
 - [GitHub.com](https://github.com/bwsd0)
 - [GitLab.com](https://gitlab.com/bwsd0)
+- [ZATech](https://zatech.co.za/)
 
 ## GPG Keys
 
 I use [GnuPG](https://gnupg.com) with separate subkeys for signing,
-authentication and encryption, certified by the following master key:
+authentication and encryption, certified by the following offline master key:
 
 ```
 pub   rsa4096/0x8767471E3CEC993D 2023-03-13 [C]
@@ -42,9 +41,6 @@ To import public keys belonging to me, use the following command:
 $ gpg2 --locate-keys barry@bwsd.dev
 ```
 
-This will lookup public keys from [bwsd.dev](https://bwsd.dev) using the Web Key
-Directory (WKD) protocol.
-
 ### Encryption Key
 
 ```
@@ -53,6 +49,8 @@ sub   rsa4096/0x6831BEF4608D0372 2023-03-13 [E] [expires: 2024-03-12]
 ```
 
 ### Signing Key
+
+**Uses**: email, Git tags, binary and source code releases.
 
 ```
 sub   rsa4096/0x6E900CB6155C3C4A 2023-03-13 [S] [expires: 2024-03-12]

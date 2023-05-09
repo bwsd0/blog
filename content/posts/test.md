@@ -151,7 +151,7 @@ This text is ***really important***.
 
 *table 1*
 
-| A | B | 
+| A | B |
 |---|---|
 | 1 | 1 |
 | 0 | 1 |
@@ -182,6 +182,19 @@ Link 182[^82]
 <abbr title="HyperText Markup Language">HTML</abbr>
 : is a markup language used to create the semantics and structure of a
 web page.
+
+This is a simple hello world program in C:
+
+``` c
+#include <stdio.h>
+
+int main() {
+  printf("Hello, World.\n");
+	  return 0;
+		}
+```
+
+To compile it use `gcc hello.c`.
 
 ## Footnotes
 
