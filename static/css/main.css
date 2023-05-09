@@ -1,90 +1,98 @@
 @font-face {
-  font-family: Inconsolata;
-  src: url('/fonts/Inconsolata.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
   font-display: swap;
+  font-family: Inconsolata;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata'),
+    url('/fonts/Inconsolata.woff2') format('woff2');
 }
 
 :root {
   --black: #000;
+  --white: #fff;
   --blockquote-border: 4px solid #ddd;
   --blue-1: #1a73e8;
   --code-font-family: 'Inconsolata', monospace;
   --color-stroke: #d2d3d7;
-  --font-size-x: calc(clamp(1.75rem, 1.39rem + 1.07vw, 2.75rem) * 1.0 );
-  --font-size-xx: calc(clamp(1.5rem, 1.29rem + 1.07vw, 2.25rem) * 1.0 );
-  --font-size-xxx: clamp(1.25rem, 1.11rem + 0.71vw, 1.75rem);
-  --font-size-xxxx: clamp(1.125rem, 1.09rem + 0.18vw, 1.25rem);
-  --gray-1: #767676;
+  --font-size-x: clamp(1.575rem, 1.251rem + 0.963vw, 2.475rem);
+  --font-size-xx: clamp(1.5rem, 1.161rem + 0.963vw, 2.025rem);
+  --font-size-xxx: clamp(1.125rem, 0.999rem + 0.639vw, 1.575rem);
+  --font-size-xxxx: clamp(1.0125rem, 0.981rem + 0.162vw, 1.0125rem);
+  --gray-1: #667;
   --gray-2: #f9f9f9;
   --gray-3: #252937;
   --gray-4: #585b63;
-  --gray-5: #f9f9f9;
-  --gray-6: #dadce0;
-  --primary-font-family: lora,'Palatino Linotype','Book Antiqua','New York','DejaVu serif';
+  --gray-5: #dadce0;
+  --gray-6: #7a7;
+  --primary-font-family: Lora,'Palatino Linotype','Book Antiqua','New York','DejaVu serif';
+  --tertiary-font-family: "Whitney SSm A","Whitney SSm B",sans-serif;
   --line-height: 1.6em;
   --toc-vert-space: 0.5rem;
-  --white: #fff;
-}
-
-* {
-  scrollbar-color: #454a4d #202324;
 }
 
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+  margin: 0;
 }
 
 a, a:visited {
-  text-decoration: none;
   color: var(--blue-1);
   display: inline;
+  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-a[rel*="external"] > span {
-  padding-left: .25em;
+/* XXX: are external link icons actually useful?
+a[rel*="external"]::after {
+  content: url('/images/external-link.svg');
 }
+*/
 
 a.footnote-ref::before {
   content: '[';
+  color: var(--black);
 }
 
 a.footnote-ref::after {
   content: ']';
+  color: var(--black);
 }
 
 :where(h2,h3,h4,h5,h6) > a:first-child {
   display: none;
   padding-left: 0.2em;
-  color: var(--gray-4);
+  color: var(--blue-1);
   font-size: inherit;
 }
 
 :where(h2,h3,h4,h5,h6):hover > a:first-child {
   display: inline-block;
   padding-left: 0.2em;
-  color: var(--gray-4);
+  color: var(--blue-1);
   font-size: inherit;
 }
 
 abbr {
-  text-decoration: underline;
+  border-bottom: 1px dotted var(--black);
+  cursor: help;
+  text-decoration: dashed;
 }
 
 nav {
   font-size: var(--font-size-xxxx);
 }
 
+ul:nth-child(n+1), ol:nth-child(n+1), ul:nth-child(n+1) {
+  margin: 0;
+}
+
 ul, li, ol {
   line-height: var(--line-height);
-  margin: 0 !important;
 }
 
 /* FIXME: wrap table elements in a div to allow scrolling when overflow occurs
@@ -98,7 +106,6 @@ table {
 }
 
 th {
-  background: var(--gray-2);
   font-family: var(--primary-font-family), sans-serif;
   height: 48px;
   padding-left: .5rem;
@@ -108,9 +115,7 @@ th {
 
 tr {
   border: 0;
-  border-bottom: 1px solid var(--gray-6);
   border-spacing: 0;
-  border-top: 1px solid var(--gray-6);
 }
 
 thead tr {
@@ -126,6 +131,13 @@ td, th {
   border: 0;
   padding: .8em .5em;
   text-align: left;
+}
+
+table tr + tr {
+  border-top: 1px solid #ccc;
+}
+table td + td {
+  border-left: 1px solid #ccc;
 }
 
 thead {
@@ -191,39 +203,26 @@ h1,h2,h3,h4,h5,h6 {
   width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, p, ol, ul,details {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-
-details {
-  margin-bottom: 0;
+h1,h2,h3,h4,h5,h6,p,ol,ul,details,pre code {
+  margin-bottom: 0.8rem;
+  margin-top: 0.8rem;
 }
 
 dt {
   font-weight: bold;
 }
 
-.title {
-  font-size: var(--font-size-x);
-}
-
 .title * {
   color: var(--black) !important;
 }
 
-html {
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-}
-
 body {
-  background-color: var(--background-color);
+  background-color: var(--white);
   color: var(--black);
   display: flex;
   flex-direction: column;
   font-family: var(--primary-font-family), serif;
-  font-size: 1.25em;
+  font-size: var(--font-size-xxxx);
   min-height: 100%;
   overflow-x: hidden;
   padding: 1.5em 1.5em;
@@ -241,7 +240,7 @@ footer {
   flex-grow: 0;
   flex-shrink: 0;
   font-size: 0.9rem;
-  line-height: 1.3em;
+  line-height: var(--line-height); /* 1.3rem;*/
   margin: 0 auto;
   padding: 1em;
   text-align: center;
@@ -250,7 +249,6 @@ footer {
 header {
   display:flex;
   justify-content: space-between;
-  margin: 0 auto;
 }
 
 blockquote {
@@ -275,20 +273,17 @@ code {
   padding-left: 5px;
   padding-right: 5px;
   tab-size: 2;
+  overflow: auto;
 }
 
 pre code {
-  word-spacing: 0 !important;
-}
-
-pre > code {
   direction: ltr !important;
+  word-spacing: 0 !important;
   display: block;
   font-family: var(--code-font-family);
   font-size: 1rem;
-  overflow-x: scroll;
+  overflow: auto;
   padding: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
-  scrollbar-width: initial;
 }
 
 article {
@@ -327,7 +322,6 @@ time {
 
 ul {
   list-style: disc outside;
-  margin-top: 0 !important;
 }
 
 details summary {
@@ -339,6 +333,10 @@ img {
   display: block;
   height: auto;
   max-width: 100%;
+}
+
+figcaption {
+  color: var(--gray-6);
 }
 
 sup {
@@ -405,16 +403,15 @@ sup {
   width: 2.5em;
 }
 
-a.dead-link, a.dead-link:hover, a.dead-link:visited {
-  color: red;
-  text-decoration: line-through;
-}
-
-#content {
+main {
   flex-grow: 1;
   margin: 0 auto;
   max-width: 600px;
   padding: 0;
   position: relative;
   width: 100%;
+}
+
+input, select, textarea,form, {
+  autocomplete: off;
 }
