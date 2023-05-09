@@ -1,7 +1,11 @@
 #!/bin/sh
 
+error() {
+  echo >&2 "$(basename "$0"): $1"; exit 1
+}
+
 usage() {
-  echo >&2 "Usage: $(basename "$0") [FILE]"; exit 2
+  echo >&2 "usage: $(basename "$0") [FILE]"; exit 2
 }
 
 if [ "$#" -ne 1 ]; then
@@ -16,8 +20,42 @@ filename="$(echo "$1" \
   | sed 's/\.md//'
 )"
 
+filename="$(basename "$filename")"
+
 if [ -z "$filename" ]; then
   usage
 fi
 
-hugo new --editor="$EDITOR" "$filename".md -c content -k post || true
+content_dir="./content/posts"
+post="${content_dir}/${filename}.md"
+
+if [ -e "$post" ]; then
+  "$EDITOR" "$post" || true
+else
+  hugo new --editor="$EDITOR" -k post -c "$content_dir" "$post" || true
+fi
+
+if [ -e "$post" ]; then
+  len="$(awk -e '
+  BEGIN {
+    start=1;
+    front_matter=0;
+  }
+  /^---$/ {
+    if (start) {
+      front_matter=1;
+    }
+  }
+  { if (! front_matter) { print $0; } }
+  /^(---|...)$/ {
+    if (! start) {
+      front_matter=0;
+    }
+    start=0;
+  }' "$post" | wc -c)"
+
+  if test "$len" = 0
+  then
+    rm -f "$post"
+  fi
+fi
