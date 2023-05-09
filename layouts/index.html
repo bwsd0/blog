@@ -1,17 +1,12 @@
 {{ define "main" }}
-<div class="container home">
-  {{ range (.Paginate ( first 10 .Pages.ByDate.Reverse )).Pages }}
-  {{ with .Page }}
-  {{ if eq .Title "About" }}{{ else }}
-  {{ if eq .Title "Privacy policy" }}{{ else }}
-  <article>
-    <h1 class="title"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
-    <time content="{{ .Date }}">{{ .Date.Format "Monday, January 2, 2006" }}</time>
-    <div class="toc-summary"><p>{{ .Summary | safeHTML }}</p></div>
-  </article>
-  {{ end }}
-  {{ end }}
-  {{ end }}
-  {{ end }}
-</div>
+{{ $posts := ( where .Site.RegularPages.ByDate.Reverse "Type" "posts" ) }}
+{{ range (.Paginate ( first 100 $posts )).Pages }}
+{{ with .Page }}
+<article>
+  <h1 class="title"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+  <time content="{{ .Date }}">{{ .Date.Format "Monday, January 2, 2006" }}</time>
+  <div class="toc-summary"><p>{{ .Summary | safeHTML }}</p></div>
+</article>
+{{ end }}
+{{ end }}
 {{ end }}

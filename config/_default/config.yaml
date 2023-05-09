@@ -1,66 +1,60 @@
-baseURL: 'https://blog.bwsd.dev'
+baseURL: "https://blog.bwsd.dev"
+timezone: "Africa/Johannesburg"
 languageCode: en-us
+
 title: Blog of Barry Wasdell
-canonifyURLs: false
-disableKinds:
-  - taxonomy
-  - taxonomyTerm
+canonifyURLs: true
 summaryLength: 30
 enableRobotsTXT: false
 disableHugoGeneratorInject: true
 enableInlineShortcodes: true
+
 params:
   AuthorName: Barry Wasdell
   AuthorEmail: barry@bwsd.dev
   Description: "Barry's blog"
+
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+
+outputs:
+  archive:
+    - HTML
+    - RSS
+  page:
+    - HTML
+    - RSS
+
 markup:
-  goldmark:
+  blackfriday:
   highlight:
     codeFences: false
     style: ""
     guessSyntax: false
     tabWidth: 2
+    noClasses: true
+
 frontmatter:
   date:
     - date
     - publishDate
     - lastmod
   lastmod:
-    - ':git'
     - lastmod
-    - date
     - publishDate
   publishDate:
     - publishDate
     - date
-privacy:
-  disqus:
-    disable: true
-  googleAnalytics:
-    disable: true
-  instagram:
-    disable: true
-  twitter:
-    disable: true
-  vimeo:
-    disable: true
-  youtube:
-    disable: true
-outputs:
-  page:
-    - HTML
-    - RSS
+
 menu:
   nav:
-    - name: Home
+    - name: Archive
       url: /
       weight: -100
-    - name: Feed
-      url: /index.xml
-      weight: -90
     - name: About
       url: /about
-      weight: -70
-    - name: Code
+      weight: -90
+    - name: Projects
       url: https://git.bwsd.dev
-      weight: -30
+      weight: -70
