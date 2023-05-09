@@ -1,3 +1,5 @@
+SHELL=/bin/bash
+export SHELL
 HTMLTEST_VERSION=latest
 export HTMLTEST_VERSION
 
@@ -11,23 +13,38 @@ run: ## Serve content locally
 	@hugo server -b localhost -D --port=$(PORT) --bind=0.0.0.0
 
 .PHONY: build
-build: # build with production settings
-	@hugo --cleanDestinationDir --minify --environment production
+build: ## build a Docker development environment
+	@docker build . --platform linux/amd64 -t bwsd.dev/blog:latest
+
+.PHONY: prod
+prod: build # build for production environment
+	@hugo --cleanDestinationDir -v --minify --environment production
+
+.PHONY: dev
+dev: build ## build for development environment
+	@hugo --cleanDestinationDir -b https://localhost:$(PORT) --environment development
+
+.PHONY: images
+images: favicons rm-exif svg
 
 .PHONY: favicons
 favicons: ## Generate favicons for common resolutions
 	@echo "Generate favicons"
-	./scripts/favicons static/b.png static/favicon.ico
+	./scripts/favicons static/images/b.png static/favicon.ico
 
 .PHONY: rm-exif
 rm-exif: ## remove EXIF metadata from images
 	@echo "Scrub image metadata"
 	./scripts/rm-exif
 
+.PHONY: svg
+svg: ## Run svgcheck on SVG images
+	@docker run -i -w "/test" -v ./static:/test bwsd.dev/blog:latest /bin/sh -c \
+		'find . -type f -iname "*.svg" -exec  svgcheck {} \;'
+
 .PHONY: test
 test: ## run tests on generated HTML
 	@docker pull wjdp/htmltest:$(HTMLTEST_VERSION)
-	@hugo --cleanDestinationDir -b http://localhost:$(PORT) --environment development
 	@docker run -w "/test" --mount "type=bind,source=$(CURDIR),target=/test" --rm \
 		wjdp/htmltest:$(HTMLTEST_VERSION) -c /test/.htmltest.yml
 
