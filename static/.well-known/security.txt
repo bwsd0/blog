@@ -1,3 +1,0 @@
-Contact: mailto:security@bwsd.dev
-Encryption: https://blog.bwsd.dev/contact
-Preferred-Languages: en
