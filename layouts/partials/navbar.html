@@ -1,10 +1,6 @@
+<!--<a title="Barry's Blog" href="/"><img class="b" src="/b.svg" alt="b"></a>-->
 <nav id="nav">
   {{ range .Site.Menus }}
-  <!--<a title="Barry's Blog" href="/"><img class="b" src="/b.svg" alt="b"></a>-->
-  <ul class="nav">
-    {{ range . }}
-    <li><a href="{{ .URL }}"><span>{{ .Name }}</span></a></li>
-    {{ end }}
-  </ul>
+  {{ range . }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
   {{ end }}
 </nav>

@@ -1,28 +1,43 @@
 ---
 title: "About"
-lastmod: 2019-06-09T08:03:16+02:00
+lastmod: 2023-05-20T14:11:59+02:00
 summary: "About page for Barry Wasdell"
 description: "About page for Barry Wasdell"
 ---
 
-**Barry Wasdell**
+**Name**:
+Barry Wasdell (aliases: **bwsd**,**bwsd0** and **bwasd**)
 
 **Email**:
 {{<email>}}
 
+**Occupation**:
+Software Developer
+
+**Employer**:
+[Reutech Radar Systems](https://www.reutechradar.com/)
+
 **Timezone**:
 South African Standard Time [(UTC +02:00)](https://time.nmisa.org/)
 
-I am a programmer.
+**Interests**:
+- Distributed systems and component-based architectures[^1]
+- Traditional design principles from Unix[^2] and Plan 9[^3]
 
-## Social
+## Summary
 
-- [Keybase](https://keybase.io/bwsd0) - Inactive but the identity
-	proofs listed on my profile are valid.
-- [LinkedIn](https://www.linkedin.com/in/barry-wasdell-38ba49191/) - Alas, [network effects](https://en.wikipedia.org/wiki/Network_effect) network effects compel me to use this platform.
-- [GitHub.com](https://github.com/bwsd0)
-- [GitLab.com](https://gitlab.com/bwsd0)
-- [ZATech](https://zatech.co.za/)
+## Public identities
+
+- [ORCID](https://orcid.org/0000-0002-1988-7356)(Open Researcher and Contributor ID)
+- [github.com/bwsd0](https://github.com/bwsd0)
+- [gitlab.com/bwsd0](https://gitlab.com/bwsd0)
+- [sr.ht/~bwsd/](https://sr.ht/~bwsd/)
+- [keybase.io](https://keybase.io/bwsd0) - Inactive, but the identity proofs
+  listed on my profile are valid.
+- [mastodon.social/@bwsd](https://mastodon.social/@bwsd)
+- [twitter.com/bwsd0](https://twitter.com/bwsd0)
+- [LinkedIn](https://www.linkedin.com/in/barry-wasdell-38ba49191/)
+- [ZATech Slack](https://zatech.co.za/)
 
 ## GPG Keys
 
@@ -41,6 +56,12 @@ To import public keys belonging to me, use the following command:
 $ gpg2 --locate-keys barry@bwsd.dev
 ```
 
+Alternatively, download them directly:
+
+```bash
+$ curl https://bwsd.dev/.well-known/openpgp/hu/0x8767471E3CEC993D.asc
+```
+
 ### Encryption Key
 
 ```
@@ -56,3 +77,9 @@ sub   rsa4096/0x6831BEF4608D0372 2023-03-13 [E] [expires: 2024-03-12]
 sub   rsa4096/0x6E900CB6155C3C4A 2023-03-13 [S] [expires: 2024-03-12]
       Key fingerprint = 1C0D 6A19 BD01 AE6E 4122  FEEB 6E90 0CB6 155C 3C4A
 ```
+
+## Footnotes
+
+[^1]: https://doc.cat-v.org/plan_9/4th_edition/papers/
+[^2]: http://www.catb.org/~esr/writings/taoup/html/ch01s06.html
+[^3]: https://pdos.csail.mit.edu/6.828/2006/lec/l-plan9.html

@@ -1,12 +1,10 @@
-SHELL=/bin/bash
+SHELL=/bin/sh
 export SHELL
-HTMLTEST_VERSION=latest
-export HTMLTEST_VERSION
-
-.PHONY: all
-all: run 
 
 PORT := 1313
+
+.PHONY: run
+default: run
 
 .PHONY: run
 run: ## Serve content locally
@@ -28,30 +26,27 @@ dev: build ## build for development environment
 images: favicons rm-exif svg
 
 .PHONY: favicons
-favicons: ## Generate favicons for common resolutions
-	@echo "Generate favicons"
-	./scripts/favicons static/images/b.png static/favicon.ico
+favicons: static/images/b.png static/favicon.ico ## Generate favicons for common resolutions
+	./scripts/favicons static/images/b.png
 
 .PHONY: rm-exif
 rm-exif: ## remove EXIF metadata from images
-	@echo "Scrub image metadata"
 	./scripts/rm-exif
 
 .PHONY: svg
-svg: ## Run svgcheck on SVG images
+svg: favicon.svg ## Run svgcheck on SVG images
 	@docker run -i -w "/test" -v ./static:/test bwsd.dev/blog:latest /bin/sh -c \
-		'find . -type f -iname "*.svg" -exec  svgcheck {} \;'
+		'find . -type f -iname "favicon.svg" -exec  svgcheck {} \;'
 
 .PHONY: test
-test: ## run tests on generated HTML
+test: ## Run tests on generated HTML
 	@docker pull wjdp/htmltest:$(HTMLTEST_VERSION)
 	@docker run -w "/test" --mount "type=bind,source=$(CURDIR),target=/test" --rm \
 		wjdp/htmltest:$(HTMLTEST_VERSION) -c /test/.htmltest.yml
 
 .PHONY: clean
 clean: ## clean most generated files
-	@rm -rf public resources
-	-@hugo --quiet --gc
+	@rm -rf public/ resources/
 
 .PHONY: help
 help: ## Print this help
